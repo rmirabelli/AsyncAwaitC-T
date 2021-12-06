@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     let service = PostsService()
-    var posts: [Post] = []
+    var posts: [DeluxePost] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

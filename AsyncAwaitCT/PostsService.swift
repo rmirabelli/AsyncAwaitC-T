@@ -32,14 +32,25 @@ struct PostsService {
         task.resume()
     }
     
-    func posts() async throws -> [Post] {
+    func posts() async throws -> [DeluxePost] {
         guard let url = URL(string: urlString) else { throw PostError.badURL }
         let session = URLSession(configuration: .ephemeral)
         let (data, response) = try await(session.data(from: url))
         guard let response = response as? HTTPURLResponse else { throw PostError.badResponse }
         guard response.statusCode == 200 else { throw PostError.badResponse }
         let posts = try JSONDecoder().decode([Post].self, from: data)
-        return posts
+        let deluxe = try await transform(posts)
+        return deluxe
+    }
+    
+    func expensiveTransform(posts: [Post], completion: @escaping ([DeluxePost]) -> Void) {
+        let deluxePosts = posts.map { DeluxePost(post: $0) }
+        completion(deluxePosts.compactMap {$0})
+    }
+
+    func transform(_ posts: [Post]) async throws -> [DeluxePost] {
+        let deluxe = posts.compactMap { DeluxePost(post: $0) }
+        return deluxe
     }
     
 }
