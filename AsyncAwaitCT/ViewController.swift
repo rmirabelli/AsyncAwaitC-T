@@ -16,14 +16,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-//        service.fetchPosts { result in
-//            switch(result) {
-//            case .success(let posts):
-//                self.posts = posts
-//                DispatchQueue.main.async { self.tableView.reloadData() }
-//            case .failure(let error): print(error)
-//            }
-//        }
         Task {
             do {
                     let posts = try await service.posts()
