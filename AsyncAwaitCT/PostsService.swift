@@ -46,13 +46,11 @@ struct PostsService {
     }
     
     func expensiveTransform(posts: [Post], completion: @escaping ([DeluxePost]) -> Void) {
-        let deluxePosts = posts.map { DeluxePost(post: $0) }
-        completion(deluxePosts.compactMap {$0})
+        completion(posts.compactMap { DeluxePost(post: $0) })
     }
 
     func transform(_ posts: [Post]) async throws -> [DeluxePost] {
-        let deluxe = posts.compactMap { DeluxePost(post: $0) }
-        return deluxe
+        posts.compactMap { DeluxePost(post: $0) }
     }
     
 }

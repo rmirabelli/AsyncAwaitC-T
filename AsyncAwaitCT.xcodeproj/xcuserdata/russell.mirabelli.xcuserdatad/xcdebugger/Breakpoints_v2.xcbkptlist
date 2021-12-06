@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "401D4002-9360-4E35-BBCF-64BCE4F007A7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2290E0CC-D7B4-4B53-9F4A-5C9E2AE13EF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AsyncAwaitCT/PostsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "posts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2290E0CC-D7B4-4B53-9F4A-5C9E2AE13EF6 - bda3aa922f883fd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for AsyncAwaitCT.PostsService.posts() async throws -&gt; Swift.Array&lt;AsyncAwaitCT.DeluxePost&gt;"
+                  moduleName = "AsyncAwaitCT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/russell.mirabelli/temp/AsyncAwaitC-T/AsyncAwaitCT/PostsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "805">
+               </Location>
+               <Location
+                  uuid = "2290E0CC-D7B4-4B53-9F4A-5C9E2AE13EF6 - 6cb61e84689bddd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for AsyncAwaitCT.PostsService.posts() async throws -&gt; Swift.Array&lt;AsyncAwaitCT.DeluxePost&gt;"
+                  moduleName = "AsyncAwaitCT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/russell.mirabelli/temp/AsyncAwaitC-T/AsyncAwaitCT/PostsService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "126">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD08528D-0C6B-4475-A116-FF2FCA25585C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AsyncAwaitCT/PostsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "posts()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "755273E5-1B66-4FD3-BA85-14F5BD19ED08"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AsyncAwaitCT/PostsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchPosts(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
