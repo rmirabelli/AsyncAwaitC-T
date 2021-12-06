@@ -18,9 +18,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         Task {
             do {
-                    let posts = try await service.posts()
-                    self.posts = posts
-                    self.tableView.reloadData()
+                self.posts = try await service.posts()
+                self.tableView.reloadData()
             } catch {
                 print(error)
             }
