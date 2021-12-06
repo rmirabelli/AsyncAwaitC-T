@@ -31,4 +31,15 @@ struct PostsService {
         }
         task.resume()
     }
+    
+    func posts() async throws -> [Post] {
+        guard let url = URL(string: urlString) else { throw PostError.badURL }
+        let session = URLSession(configuration: .ephemeral)
+        let (data, response) = try await(session.data(from: url))
+        guard let response = response as? HTTPURLResponse else { throw PostError.badResponse }
+        guard response.statusCode == 200 else { throw PostError.badResponse }
+        let posts = try JSONDecoder().decode([Post].self, from: data)
+        return posts
+    }
+    
 }
