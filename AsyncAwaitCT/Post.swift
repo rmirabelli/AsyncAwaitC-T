@@ -13,3 +13,17 @@ struct Post: Codable {
     let title: String
     let body: String
 }
+
+struct DeluxePost {
+    let user: String
+    let id: String
+    let title: String
+    let body: String
+    
+    init?(post: Post) {
+        user = String(post.userId)
+        id = String(post.id)
+        title = post.title
+        body = post.body
+    }
+}
