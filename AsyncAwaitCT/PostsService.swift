@@ -18,7 +18,7 @@ enum PostError: Error {
 struct PostsService {
     private let urlString = "https://jsonplaceholder.typicode.com/posts"
     
-    func fetchPosts(completion: @escaping (Result<[Post], Error>) -> Void) {
+    func fetchPosts(completion: @escaping (Result<[DeluxePost], Error>) -> Void) {
         guard let url = URL(string: urlString) else { completion(.failure(PostError.badURL)); return}
         let session = URLSession(configuration: .ephemeral)
         let task = session.dataTask(with: url) { data, response, error in
@@ -27,11 +27,13 @@ struct PostsService {
             guard response.statusCode == 200 else { completion(.failure(PostError.badResponse)); return}
             guard let data = data else { completion(.failure(PostError.noData)); return}
             guard let posts = try? JSONDecoder().decode([Post].self, from: data) else {completion(.failure(PostError.decodingError)); return}
-            completion(.success(posts))
+            expensiveTransform(posts: posts) { deluxe in
+                completion(.success(deluxe))
+            }
         }
         task.resume()
     }
-    
+
     func posts() async throws -> [DeluxePost] {
         guard let url = URL(string: urlString) else { throw PostError.badURL }
         let session = URLSession(configuration: .ephemeral)
